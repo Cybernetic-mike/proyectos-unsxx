@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.616706b1.css",
-    "main.js": "/static/js/main.3927d327.js",
+    "main.js": "/static/js/main.059bbe78.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
-    "static/media/Banner1.png": "/static/media/Banner1.7b488e21ded562e60bf5.png",
-    "static/media/fondo3.jpg": "/static/media/fondo3.9b7814966a045adb45b5.jpg",
-    "static/media/bannerunsxx.jpg": "/static/media/bannerunsxx.ea2635cc8701ca3a0091.jpg",
+    "static/media/Banner3.png": "/static/media/Banner3.0519b73a69a90616dcc9.png",
+    "static/media/Banner2.png": "/static/media/Banner2.e269a22ad546518b73e6.png",
+    "static/media/Banner1.png": "/static/media/Banner1.8b19058162b2364bbfbc.png",
     "static/media/unsxx.png": "/static/media/unsxx.d01d787f5c7a6956e82d.png",
     "static/media/pngwing.png": "/static/media/pngwing.6057b25a3186d4aa6877.png",
     "static/media/pngvision.png": "/static/media/pngvision.3d9364b4804cf4a9630c.png",
@@ -68,11 +68,11 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/index.html",
     "main.616706b1.css.map": "/static/css/main.616706b1.css.map",
-    "main.3927d327.js.map": "/static/js/main.3927d327.js.map",
+    "main.059bbe78.js.map": "/static/js/main.059bbe78.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.616706b1.css",
-    "static/js/main.3927d327.js"
+    "static/js/main.059bbe78.js"
   ]
 }
