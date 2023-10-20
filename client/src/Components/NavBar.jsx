@@ -2,9 +2,15 @@ import {
   AppBar,
   Box,
   Button,
+  ClickAwayListener,
   Drawer,
+  Grow,
   IconButton,
   InputBase,
+  MenuItem,
+  MenuList,
+  Paper,
+  Popper,
   Slide,
   TextField,
   Toolbar,
@@ -13,9 +19,10 @@ import {
   useScrollTrigger,
 } from "@mui/material";
 import NavListDrawer from "./NavListDrawer";
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import escudo from "../images/unsxx.png";
 import PropTypes from "prop-types";
@@ -24,7 +31,7 @@ import styled from "@emotion/styled";
 import SearchIcon from "@mui/icons-material/Search";
 import zIndex from "@mui/material/styles/zIndex";
 import { useAuth } from "../context/AuthContext";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const Img = styled("img")({
   width: 50,
@@ -117,6 +124,46 @@ function NavBar({ navArrayLinks, navArrayLinksAdmin, props }) {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
+  const [abrir, setAbrir] = React.useState(false);
+  const anchorRef = React.useRef(null);
+
+  const handleToggle = () => {
+    setAbrir((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setAbrir(false);
+  };
+
+  function handleListKeyDown(event) {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      setAbrir(false);
+    } else if (event.key === "Escape") {
+      setAbrir(false);
+    }
+  }
+
+  const prevOpen = React.useRef(abrir);
+  React.useEffect(() => {
+    if (prevOpen.current === true && abrir === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = abrir;
+  }, [abrir]);
+  
+  const {getProfile, user}=useAuth();
+    useEffect(() => {
+        //getProfile();
+        console.log(user);
+        //console.log(getProfile().user());
+      }, []);
+
   return (
     <>
       <ElevationScroll {...props}>
@@ -143,25 +190,7 @@ function NavBar({ navArrayLinks, navArrayLinksAdmin, props }) {
                   >
                     Inicio
                   </Button>
-                  <Button
-                    color="inherit"
-                    key="Salir"
-                    component={NavLink}
-                    to="/"
-                    onClick={() => {
-                      logout();
-                    }}
-                  >
-                    Salir
-                  </Button>
-                  <Button
-                    color="inherit"
-                    key="Registrar"
-                    component={NavLink}
-                    to="/register"
-                  >
-                    Registrar
-                  </Button>
+                  
                   <Button
                     color="inherit"
                     key="Nuevo Autor"
@@ -186,6 +215,95 @@ function NavBar({ navArrayLinks, navArrayLinksAdmin, props }) {
                   >
                     Proyectos
                   </Button>
+                  <Box sx={{ display: "inline" }}>
+                    <Button
+                      color="inherit"
+                      ref={anchorRef}
+                      id="composition-button"
+                      aria-controls={abrir ? "composition-menu" : undefined}
+                      aria-expanded={abrir ? "true" : undefined}
+                      aria-haspopup="true"
+                      onClick={handleToggle}
+                    >
+                    <AccountCircleIcon/>
+                    {user.username}
+                    </Button>
+                    <Popper
+                      open={abrir}
+                      anchorEl={anchorRef.current}
+                      role={undefined}
+                      placement="bottom-start"
+                      transition
+                      disablePortal
+                    >
+                      {({ TransitionProps, placement }) => (
+                        <Grow
+                          {...TransitionProps}
+                          style={{
+                            transformOrigin:
+                              placement === "bottom-start"
+                                ? "right bottom"
+                                : "right top",
+                          }}
+                        >
+                          <Paper sx={{ background: "white"}}>
+                            <ClickAwayListener onClickAway={handleClose}>
+                              <MenuList
+                                autoFocusItem={abrir}
+                                id="composition-menu"
+                                aria-labelledby="composition-button"
+                                onKeyDown={handleListKeyDown}
+                              >
+                                <MenuItem
+                                  key="Profile"
+                                  component={NavLink}
+                                  to="/profile"
+                                  onClick={handleClose}
+                                >
+                                <Typography align="left" pl={12}>Mi Perfil</Typography>
+                                  
+                                </MenuItem>
+                                <MenuItem
+                                  key="Registrar"
+                                  component={NavLink}
+                                  to="/register"
+                                  onClick={handleClose}
+                                >
+                                  Nuevo Administrador
+                                </MenuItem>
+                                <MenuItem
+                                  key="Backup"
+                                  component={NavLink}
+                                  to="/backupfiles"
+                                  onClick={handleClose}
+                                >
+                                  Copia de seguridad
+                                </MenuItem>
+                                <MenuItem
+                                  key="Carrera"
+                                  component={NavLink}
+                                  to="/registercarrera"
+                                  onClick={handleClose}
+                                >
+                                  Nueva Carrera
+                                </MenuItem>
+                                <MenuItem
+                                  key="Salir"
+                                  component={NavLink}
+                                  to="/"
+                                  onClick={() => {
+                                    logout();
+                                  }}
+                                >
+                                  <Typography align="left" pl={15}>Salir</Typography>
+                                </MenuItem>
+                              </MenuList>
+                            </ClickAwayListener>
+                          </Paper>
+                        </Grow>
+                      )}
+                    </Popper>
+                  </Box>
                 </>
               ) : (
                 <>
@@ -243,7 +361,7 @@ function NavBar({ navArrayLinks, navArrayLinksAdmin, props }) {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  navigate(`/filepage?search=${search}`); 
+                  navigate(`/filepage?search=${search}`);
                 }}
               >
                 <Search>

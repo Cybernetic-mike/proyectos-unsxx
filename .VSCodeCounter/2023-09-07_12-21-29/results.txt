@@ -1,0 +1,61 @@
+Date : 2023-09-07 12:21:29
+Directory : d:\Proyecto-de-grado\client\src
+Total : 30 files,  2197 codes, 70 comments, 219 blanks, all 2486 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         28 |      2,170 |         70 |        215 |      2,455 |
+| CSS        |          1 |         26 |          0 |          4 |         30 |
+| XML        |          1 |          1 |          0 |          0 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                         | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                            |         30 |      2,197 |         70 |        219 |      2,486 |
+| . (Files)                                                    |          6 |        141 |          5 |         20 |        166 |
+| Components                                                   |          8 |        769 |         12 |         68 |        849 |
+| Pages                                                        |          8 |      1,049 |         51 |         87 |      1,187 |
+| api                                                          |          5 |         40 |          1 |         19 |         60 |
+| context                                                      |          3 |        198 |          1 |         25 |        224 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                     | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\Proyecto-de-grado\client\src\App.jsx                      | JavaScript |         72 |          1 |         11 |         84 |
+| d:\Proyecto-de-grado\client\src\App.test.js                  | JavaScript |          7 |          0 |          2 |          9 |
+| d:\Proyecto-de-grado\client\src\Components\Aside.jsx         | JavaScript |        120 |          5 |         11 |        136 |
+| d:\Proyecto-de-grado\client\src\Components\Busqueda.jsx      | JavaScript |         84 |          1 |          5 |         90 |
+| d:\Proyecto-de-grado\client\src\Components\Footer.jsx        | JavaScript |         89 |          1 |          8 |         98 |
+| d:\Proyecto-de-grado\client\src\Components\ImageBanner.css   | CSS        |         26 |          0 |          4 |         30 |
+| d:\Proyecto-de-grado\client\src\Components\ImageBanner.jsx   | JavaScript |         26 |          1 |          5 |         32 |
+| d:\Proyecto-de-grado\client\src\Components\Licencia.jsx      | JavaScript |         62 |          0 |          3 |         65 |
+| d:\Proyecto-de-grado\client\src\Components\NavBar.jsx        | JavaScript |        264 |          4 |         12 |        280 |
+| d:\Proyecto-de-grado\client\src\Components\NavListDrawer.jsx | JavaScript |         98 |          0 |         20 |        118 |
+| d:\Proyecto-de-grado\client\src\Pages\FilePage.jsx           | JavaScript |        150 |          2 |          9 |        161 |
+| d:\Proyecto-de-grado\client\src\Pages\Home.jsx               | JavaScript |        211 |          6 |         11 |        228 |
+| d:\Proyecto-de-grado\client\src\Pages\Login.jsx              | JavaScript |        104 |          3 |          3 |        110 |
+| d:\Proyecto-de-grado\client\src\Pages\ProtectedRoute.jsx     | JavaScript |          9 |          0 |          3 |         12 |
+| d:\Proyecto-de-grado\client\src\Pages\Register.jsx           | JavaScript |        172 |         26 |         10 |        208 |
+| d:\Proyecto-de-grado\client\src\Pages\RegisterAuthor.jsx     | JavaScript |        195 |          9 |         26 |        230 |
+| d:\Proyecto-de-grado\client\src\Pages\RegisterFile.jsx       | JavaScript |        158 |          5 |         19 |        182 |
+| d:\Proyecto-de-grado\client\src\Pages\ViewFile.jsx           | JavaScript |         50 |          0 |          6 |         56 |
+| d:\Proyecto-de-grado\client\src\api\auth.js                  | JavaScript |          4 |          0 |          3 |          7 |
+| d:\Proyecto-de-grado\client\src\api\authors.js               | JavaScript |          7 |          0 |          3 |         10 |
+| d:\Proyecto-de-grado\client\src\api\axios.js                 | JavaScript |          6 |          0 |          3 |          9 |
+| d:\Proyecto-de-grado\client\src\api\carreras.js              | JavaScript |          2 |          0 |          2 |          4 |
+| d:\Proyecto-de-grado\client\src\api\tasks.js                 | JavaScript |         21 |          1 |          8 |         30 |
+| d:\Proyecto-de-grado\client\src\context\AuthContext.jsx      | JavaScript |         82 |          0 |          8 |         90 |
+| d:\Proyecto-de-grado\client\src\context\AuthorsContext.jsx   | JavaScript |         60 |          1 |          8 |         69 |
+| d:\Proyecto-de-grado\client\src\context\TasksContext.jsx     | JavaScript |         56 |          0 |          9 |         65 |
+| d:\Proyecto-de-grado\client\src\index.js                     | JavaScript |         48 |          0 |          4 |         52 |
+| d:\Proyecto-de-grado\client\src\logo.svg                     | XML        |          1 |          0 |          0 |          1 |
+| d:\Proyecto-de-grado\client\src\reportWebVitals.js           | JavaScript |         12 |          0 |          2 |         14 |
+| d:\Proyecto-de-grado\client\src\setupTests.js                | JavaScript |          1 |          4 |          1 |          6 |
+| Total                                                        |            |      2,197 |         70 |        219 |      2,486 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+

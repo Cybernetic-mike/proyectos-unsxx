@@ -20,8 +20,8 @@ import {
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import banner1 from "../images/Banner1.png";
-import banner2 from "../images/fondo3.jpg";
-import banner3 from "../images/bannerunsxx.jpg";
+import banner2 from "../images/Banner2.png";
+import banner3 from "../images/Banner3.png";
 import Mision from "../images/pngwing.png";
 import Vision from "../images/pngvision.png";
 import Seguridad from "../images/pngseguridad.png";

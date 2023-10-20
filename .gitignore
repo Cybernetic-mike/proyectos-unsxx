@@ -1,1 +1,4 @@
 node_modules
+src/backups
+src/uploads/*.pdf
+.VSCodeCounter

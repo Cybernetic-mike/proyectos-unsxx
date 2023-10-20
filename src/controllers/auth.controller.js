@@ -3,12 +3,15 @@ import bcrypt from 'bcryptjs';
 import { createAccesToken } from '../libs/jwt.js';
 import jwt from 'jsonwebtoken'
 import {TOKEN_SECRET} from '../config.js'
+import imprimirDocumentos from '../notifications.js';
+
+
 
 export const register=async (req,res)=>{
-    const {name, email, password, username}=req.body
+    const {name, email, password, username, notification}=req.body
 
     try{
-
+        console.log(req.body);
         const emailFound = await User.findOne({email});
         if(emailFound)
         return res.status(400).json(["El Correo ya existe"]);
@@ -22,16 +25,19 @@ export const register=async (req,res)=>{
             name,
             username,
             email,
+            notification,
             password: passwordHash,
         });
         const userSaved= await newUser.save();
         const token= await createAccesToken({id: userSaved._id});
         res.cookie("token",token);
+        
         res.json({
             id: userSaved._id,
             name:userSaved.name,
             username:userSaved.username,
             email:userSaved.email,
+            notification: userSaved.notification
         });
     }catch(error){
         res.status(500).json({message: error.message});
@@ -52,8 +58,10 @@ export const login=async (req,res)=>{
         res.cookie("token",token);
         res.json({
             id: userFound._id,
+            name:userFound.name,
             username:userFound.username,
             email:userFound.email,
+            //notification: userFound.notification
         });
     }catch(error){
         res.status(500).json({message: error.message});
@@ -77,6 +85,7 @@ export const profile= async (req, res)=>{
         name:userFound.name,
         username:userFound.username,
         email:userFound.email,
+        notification: userFound.notification
     });
 };
 

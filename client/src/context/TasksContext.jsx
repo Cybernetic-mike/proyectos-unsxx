@@ -3,6 +3,7 @@ import {
   createTaskRequest,
   getTasksRequest,
   deleteTaskRequest,
+  updateTaskRequest
 } from "../api/tasks";
 import { useNavigate } from "react-router-dom";
 
@@ -48,6 +49,15 @@ export function TaskProvider({ children }) {
     console.log(res.data);
   };
 
+  const updateTask = async(id, task)=>{
+    try {
+      const res = await updateTaskRequest(id, task);
+      console.log(res.task)
+    } catch (error) {
+      console.error(error);      
+    }
+  }
+
   return (
     <TaskContext.Provider
       value={{
@@ -56,6 +66,7 @@ export function TaskProvider({ children }) {
         getTasks,
         deleteTask,
         errors,
+        updateTask
       }}
     >
       {children}

@@ -22,6 +22,7 @@ export const AuthorProvider=({ children })=> {
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
 
+  
   const getAuthors = async () => {
     try {
       const res = await getAuthorsRequest();

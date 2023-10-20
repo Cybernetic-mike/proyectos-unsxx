@@ -12,5 +12,8 @@ export const createTaskSchema=z.object({
     file:z.string({
         required_error:'Debe añadir el archivo en formato PDF',
     }),
+    visits:z.string({
+        required_error: 'Error al registrar visitas',
+    }),
     date:z.string().datetime().optional(),
 });

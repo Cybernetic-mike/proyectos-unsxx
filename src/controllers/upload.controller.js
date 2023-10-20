@@ -1,3 +1,9 @@
+//import express from "express";
+//import {limpiarArchivosTemporales} from "../clearTempFiles.js"
+
+//const app = express();
+const carpetaArchivosTemporales = './src';
+
 export const uploadFile = (req, res) => {
   if (req.file === null) {
     return;
@@ -13,4 +19,6 @@ export const uploadFile = (req, res) => {
 
     res.send("File uploaded!");
   });
+  //limpiarArchivosTemporales(carpetaArchivosTemporales);
+
 };

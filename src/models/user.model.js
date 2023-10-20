@@ -21,6 +21,10 @@ const userSchema=new mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    notification: {
+        type: Boolean,
+        required: false,
     }
 },{
     timestamps:true

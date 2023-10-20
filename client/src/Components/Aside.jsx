@@ -5,10 +5,10 @@ import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+//import Typography from "@mui/material/Typography";
+//import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Button } from "@mui/material";
-import { getCarreras } from "../api/carreras";
+import { getCarrerasRequest } from "../api/carreras";
 import { useNavigate } from "react-router-dom";
 
 const Accordion = styled((props) => (
@@ -65,7 +65,7 @@ function Aside() {
   };
 
   useEffect(() => {
-    getCarreras().then((res) => {
+    getCarrerasRequest().then((res) => {
       setCarreras(res.data);
     });
   }, []);

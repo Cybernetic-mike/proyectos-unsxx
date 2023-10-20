@@ -1,3 +1,4 @@
+//import { Int32 } from "mongodb";
 import mongoose from "mongoose";
 
 // append index for searching to some fields
@@ -31,6 +32,10 @@ const projectSchema = new mongoose.Schema(
     carrera: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Carrera",
+    },
+    visits: {
+      type: Number,
+      required: false
     }
   },
   {

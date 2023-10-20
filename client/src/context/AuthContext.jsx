@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { registerRequest, loginRequest, verityTokenRequest } from "../api/auth";
+import { registerRequest, loginRequest, verityTokenRequest, profileRequest } from "../api/auth";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
@@ -19,8 +19,10 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const signup = async (user) => {
+    console.log(user);
     try {
       const res = await registerRequest(user);
+      
       console.log(res.data);
       setUser(res.data);
       setIsAuthenticated(true);
@@ -34,6 +36,7 @@ export const AuthProvider = ({ children }) => {
   const signin = async (user) => {
     try {
       const res = await loginRequest(user);
+      console.log("inicio de sesion");
       console.log(res);
       setIsAuthenticated(true);
       setUser(res.data);
@@ -46,6 +49,19 @@ export const AuthProvider = ({ children }) => {
       setErrors([error.response.data.message]);
     }
   };
+
+  const getProfile = async (queryObj) => {
+    try {
+      const res = await profileRequest(queryObj);
+      setUser(res.data);
+      //return user;
+      //console.log(user);
+    } catch (error) {
+      console.error(error);
+      setErrors(error.response.data);
+    }
+  };
+
 
   const logout = () => {
     Cookies.remove("token");
@@ -78,6 +94,7 @@ export const AuthProvider = ({ children }) => {
         signup,
         signin,
         logout,
+        getProfile,
         user,
         isAuthenticated,
         errors,

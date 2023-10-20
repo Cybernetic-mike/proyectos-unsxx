@@ -20,7 +20,7 @@ const Licencia = ({ isOpen, onRequestClose }) => {
         }}
       >
         <Typography id="modal-title" variant="h6" component="h2">
-          Licencia
+          Terminos y condiciones
         </Typography>
         {/* Contenido de la licencia */}
         <Typography variant="body2" sx={{ mt: 2 }}>

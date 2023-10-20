@@ -1,0 +1,55 @@
+Date : 2023-09-07 12:22:25
+Directory : d:\Proyecto-de-grado\src
+Total : 24 files,  622 codes, 28 comments, 116 blanks, all 766 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         24 |        622 |         28 |        116 |        766 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                         | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                            |         24 |        622 |         28 |        116 |        766 |
+| . (Files)                                                    |          4 |         58 |         24 |         21 |        103 |
+| controllers                                                  |          5 |        252 |          2 |         56 |        310 |
+| libs                                                         |          1 |         17 |          0 |          0 |         17 |
+| middlewares                                                  |          2 |         20 |          0 |          3 |         23 |
+| models                                                       |          4 |        133 |          1 |         14 |        148 |
+| routes                                                       |          5 |         69 |          1 |         20 |         90 |
+| schemas                                                      |          3 |         73 |          0 |          2 |         75 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                     | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\Proyecto-de-grado\src\app.js                              | JavaScript |         42 |          8 |         15 |         65 |
+| d:\Proyecto-de-grado\src\config.js                           | JavaScript |          1 |          0 |          0 |          1 |
+| d:\Proyecto-de-grado\src\controllers\auth.controller.js      | JavaScript |         82 |          0 |         18 |        100 |
+| d:\Proyecto-de-grado\src\controllers\author.controller.js    | JavaScript |         52 |          0 |         10 |         62 |
+| d:\Proyecto-de-grado\src\controllers\carrera.controller.js   | JavaScript |         13 |          0 |          6 |         19 |
+| d:\Proyecto-de-grado\src\controllers\tasks.controller.js     | JavaScript |         91 |          1 |         20 |        112 |
+| d:\Proyecto-de-grado\src\controllers\upload.controller.js    | JavaScript |         14 |          1 |          2 |         17 |
+| d:\Proyecto-de-grado\src\db.js                               | JavaScript |          9 |         16 |          3 |         28 |
+| d:\Proyecto-de-grado\src\index.js                            | JavaScript |          6 |          0 |          3 |          9 |
+| d:\Proyecto-de-grado\src\libs\jwt.js                         | JavaScript |         17 |          0 |          0 |         17 |
+| d:\Proyecto-de-grado\src\middlewares\validateToken.js        | JavaScript |         12 |          0 |          2 |         14 |
+| d:\Proyecto-de-grado\src\middlewares\validator.middleware.js | JavaScript |          8 |          0 |          1 |          9 |
+| d:\Proyecto-de-grado\src\models\author.model.js              | JavaScript |         42 |          0 |          2 |         44 |
+| d:\Proyecto-de-grado\src\models\carrera.model.js             | JavaScript |         22 |          0 |          4 |         26 |
+| d:\Proyecto-de-grado\src\models\project.model.js             | JavaScript |         42 |          1 |          5 |         48 |
+| d:\Proyecto-de-grado\src\models\user.model.js                | JavaScript |         27 |          0 |          3 |         30 |
+| d:\Proyecto-de-grado\src\routes\auth.routes.js               | JavaScript |         18 |          0 |          4 |         22 |
+| d:\Proyecto-de-grado\src\routes\author.routes.js             | JavaScript |         17 |          0 |          3 |         20 |
+| d:\Proyecto-de-grado\src\routes\carrera.routes.js            | JavaScript |          6 |          0 |          4 |         10 |
+| d:\Proyecto-de-grado\src\routes\projects.routes.js           | JavaScript |         23 |          1 |          6 |         30 |
+| d:\Proyecto-de-grado\src\routes\upload.routes.js             | JavaScript |          5 |          0 |          3 |          8 |
+| d:\Proyecto-de-grado\src\schemas\auth.schema.js              | JavaScript |         35 |          0 |          2 |         37 |
+| d:\Proyecto-de-grado\src\schemas\author.schema.js            | JavaScript |         22 |          0 |          0 |         22 |
+| d:\Proyecto-de-grado\src\schemas\task.chema.js               | JavaScript |         16 |          0 |          0 |         16 |
+| Total                                                        |            |        622 |         28 |        116 |        766 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+

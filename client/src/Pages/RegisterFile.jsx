@@ -100,7 +100,7 @@ export default function RegisterFile() {
                     required
                     fullWidth
                     id="registration"
-                    label="Matrícula"
+                    label="C.I./R.U."
                     autoFocus
                     {...register("registration", { required: true })}
                     helperText={errors.registration && "Matricula Requerida"}

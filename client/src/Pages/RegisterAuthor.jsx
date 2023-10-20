@@ -8,6 +8,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -91,7 +92,7 @@ function RegisterAuthor() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
+            <PersonAddIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Registro de nuevo Investigador
@@ -110,7 +111,7 @@ function RegisterAuthor() {
                   required
                   fullWidth
                   id="registration"
-                  label="Matricula"
+                  label="C.I./R.U.º"
                   {...register("registration", { required: true })}
                   autoFocus
                   helperText={errors.registration && "Nombre es requerido"}

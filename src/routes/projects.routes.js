@@ -24,6 +24,6 @@ router.post(
 );
 
 router.delete("/proyects/:id", authRequired, deleteTask);
-router.put("/proyects/:id", authRequired, updateTask);
+router.put("/proyects/:id", updateTask);
 
 export default router;
