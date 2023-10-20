@@ -106,16 +106,7 @@ function RegisterCarrera() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
-                  id="slug"
-                  label="Carrera"
-                  name="slug"
-                  value={inputValue1}
-                  //focused={false}
-                  //sx={{display: "none"}}
-
-                  {...register("slug", { required: true })}
-                />
+                
               </Grid>
             </Grid>
             <Button
