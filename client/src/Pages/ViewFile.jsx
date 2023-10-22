@@ -33,9 +33,10 @@ function ViewFile() {
   const location = useLocation();
   const urlFile = new URLSearchParams(location.search).get("urlFile");
   const [numPages, setNumPages] = useState(null);
-  console.log(urlFile);
 
-  const pdfUrl = `http://157.230.0.137:4000/viewfile?urlFile=/${urlFile}`;
+  //const pdfUrl = `http://localhost:4000${urlFile}`;
+  const pdfUrl = process.env.REACT_APP_API_URL+`${urlFile}`;
+  console.log(pdfUrl);
   const [url, setUrl]=useState(pdfUrl);
 
   function onDocumentLoadSuccess({ numPages }) {
