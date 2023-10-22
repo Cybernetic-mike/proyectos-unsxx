@@ -65,7 +65,7 @@ app.use("/api", projectRoutes);
 app.use("/api", uploadRoutes);
 app.use("/api", authorRoutes);
 app.use("/api", carreraRoutes);
-app.use(express.static('./uploads'));
+//app.use(express.static('./uploads'));
 
 app.use("/uploads", express.static(path.resolve("./src/uploads")));
 
