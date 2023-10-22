@@ -56,7 +56,7 @@ function BackupFiles() {
     }
     
 
-    fetch('http://localhost:4000/api/uploadPDF', {
+    fetch('http://157.230.0.137:4000/api/uploadPDF', {
       method: 'POST',
       body: formData,
     })
