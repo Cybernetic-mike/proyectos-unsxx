@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://proyectos-unsxx.site",
     credentials: true,
   })
 );
