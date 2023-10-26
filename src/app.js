@@ -22,20 +22,18 @@ import { getProjects } from "./controllers/tasks.controller.js";
 
 import enviarMail from "./email.js";
 
-
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(express.static(path.join(__dirname, "../client/build")));
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+// });
 
 // Resto de la configuración de tu servidor aquí
 
 // Ruta de ejemplo para servir la página principal de React
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-});
 
 app.use(
   cors({
@@ -66,7 +64,7 @@ app.use("/api", projectRoutes);
 app.use("/api", uploadRoutes);
 app.use("/api", authorRoutes);
 app.use("/api", carreraRoutes);
-app.use(express.static('./uploads'));
+app.use(express.static("./uploads"));
 
 app.use("/uploads", express.static(path.resolve("./src/uploads")));
 
@@ -158,7 +156,12 @@ const storage = multer.diskStorage({
 
 //enviarMail();
 
+app.use(express.static(path.join(__dirname, "../client/build")));
 
+app.get("*", (req, res) => {
+  console.log(path.join(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
 
 // Función para imprimir los documentos de la colección
 
