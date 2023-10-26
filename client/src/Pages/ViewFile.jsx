@@ -34,8 +34,7 @@ function ViewFile() {
   const urlFile = new URLSearchParams(location.search).get("urlFile");
   const [numPages, setNumPages] = useState(null);
 
-  //const pdfUrl = `http://localhost:4000${urlFile}`;
-  const pdfUrl = `/uploads/${urlFile}`;
+  const pdfUrl = urlFile;
   console.log(pdfUrl);
   const [url, setUrl]=useState(pdfUrl);
 
