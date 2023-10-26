@@ -45,7 +45,7 @@ function ViewFile() {
   const shareOnFacebook = () => {
     window.FB.ui({
       method: 'share',
-      href: 'https://developers.facebook.com/docs/'
+      href: pdfUrl
     }, function(response){});
   };
   return (
