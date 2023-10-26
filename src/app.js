@@ -8,6 +8,7 @@ import path from "path";
 import fs from "fs";
 import archiver from "archiver";
 import multer from "multer";
+import {FRONTEND_URL} from './config.js'
 
 import projectRoutes from "./routes/projects.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
@@ -37,8 +38,7 @@ const __dirname = dirname(__filename);
 
 app.use(
   cors({
-    //origin: "https://proyectos-unsxx.site",
-    origin: "http://localhost:3000",
+    origin: FRONTEND_URL,
     credentials: true,
   })
 );
