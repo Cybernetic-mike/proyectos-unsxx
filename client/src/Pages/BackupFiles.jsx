@@ -34,7 +34,8 @@ function BackupFiles() {
     axios
       .post("/uploads", files)
       .then((response) => {
-        //setFiles(response.data);
+        console.log(response.data);
+        // setFiles(response.data);
       })
       .catch((error) => {
         console.error("Error al iniciar la descarga:", error);
@@ -56,11 +57,11 @@ function BackupFiles() {
       console.log(selectFiles[i]);
     }
 
-    fetch("https://proyectos-unsxx.site/api/uploadPDF", {
+    fetch("http://localhost:4000/api/uploads", {
       method: "POST",
       body: formData,
     })
-      .then((response) => response.json())
+      .then((response) => response.blob())
       .then((data) => {
         console.log(data);
         // No se requieren acciones adicionales en el frontend

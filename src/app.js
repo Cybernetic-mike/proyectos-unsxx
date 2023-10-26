@@ -2,13 +2,13 @@ import express from "express";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.routes.js";
 import cookieParser from "cookie-parser";
-import fileUpload from "express-fileupload";
+// import fileUpload from "express-fileupload";
 import cors from "cors";
 import path from "path";
 import fs from "fs";
 import archiver from "archiver";
 import multer from "multer";
-import {FRONTEND_URL} from './config.js'
+import { FRONTEND_URL } from "./config.js";
 
 import projectRoutes from "./routes/projects.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
@@ -28,117 +28,6 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-// });
-
-// Resto de la configuración de tu servidor aquí
-
-// Ruta de ejemplo para servir la página principal de React
-
-app.use(
-  cors({
-    origin: FRONTEND_URL,
-    credentials: true,
-  })
-);
-
-app.use(morgan("dev"));
-app.use(express.json());
-app.use(cookieParser());
-app.use(
-  fileUpload({
-    useTempFiles: true,
-    // tempFileDir: path.resolve("./src/uploads"),
-    tempFileDir: "./src",
-    // createParentPath: true,
-    // limits: { fileSize: 10 * 1024 * 1024 },
-    // abortOnLimit: true,
-    // responseOnLimit: "archivo demasiado grande",
-  })
-);
-// app.use(express.urlencoded({ extended: true }));
-
-app.use("/api", authRoutes);
-app.use("/api", projectRoutes);
-app.use("/api", uploadRoutes);
-app.use("/api", authorRoutes);
-app.use("/api", carreraRoutes);
-app.use(express.static("./uploads"));
-
-app.use("/uploads", express.static(path.resolve("./src/uploads")));
-
-app.get("/api/uploads", (req, res) => {
-  // Obtén la lista de archivos en tu carpeta
-  getProjects;
-  const folderPath = "./src/uploads";
-  console.log("");
-  fs.readdir(folderPath, (err, files) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: "Error al leer la carpeta de archivos" });
-    } else {
-      res.json({ files });
-    }
-  });
-});
-
-app.post("/api/uploads", (req, res) => {
-  const selectedFiles = req.body;
-  //console.log(selectedFiles);
-  const folderPath = "./src/uploads";
-
-  // Inicializa Archiver para crear un archivo ZIP
-  const archive = archiver("zip", {
-    zlib: { level: 9 }, // Nivel de compresión
-  });
-
-  // Crea un flujo de lectura para el archivo ZIP
-  const output = fs.createWriteStream(
-    "./src/backups/copia-de-seguridad-proyectos.zip"
-  );
-
-  // Pipe Archiver al flujo de salida
-
-  const arreglo = Object.keys(selectedFiles);
-  // Agrega los archivos seleccionados al archivo ZIP
-  arreglo.forEach((file) => {
-    const value = selectedFiles[file];
-    const filePath = path.join(folderPath, value);
-    archive.file(filePath, { name: value });
-    console.log(filePath);
-  });
-
-  archive.pipe(output);
-  // Finaliza el archivo ZIP
-  archive.finalize();
-
-  // Envía el archivo ZIP como respuesta al cliente
-  output.on("close", function () {
-    res.download(
-      "./src/backups/copia-de-seguridad-proyectos.zip",
-      "copia-de-seguridad-proyectos.zip",
-      (err) => {
-        if (err) {
-          console.error(err);
-          res.status(500).json({ error: "Error al descargar archivos" });
-        }
-      }
-    );
-  });
-  //const downloadUrl = '/archivo.zip';
-});
-app.get("/api/download/archivo.zip", (req, res) => {
-  const filePath = __dirname + "/backups/copia-de-seguridad-proyectos.zip"; // Ruta completa al archivo ZIP
-  console.log(filePath);
-  res.download(filePath, "copia-de-seguridad-proyectos.zip", (err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: "Error al descargar archivos" });
-    }
-  });
-});
-
 // Configuración de multer para guardar archivos en una carpeta específica
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
@@ -154,12 +43,123 @@ const storage = multer.diskStorage({
   },
 });
 
+app.use(
+  cors({
+    origin: FRONTEND_URL,
+    credentials: true,
+  })
+);
+
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(cookieParser());
+// app.use(
+//   fileUpload({
+//     useTempFiles: true,
+//     // tempFileDir: path.resolve("./src/uploads"),
+//     tempFileDir: "./src",
+//     // createParentPath: true,
+//     // limits: { fileSize: 10 * 1024 * 1024 },
+//     // abortOnLimit: true,
+//     // responseOnLimit: "archivo demasiado grande",
+//   })
+// );
+
+// app.use(express.urlencoded({ extended: true }));
+
+app.use("/api", authRoutes);
+app.use("/api", projectRoutes);
+app.use("/api", uploadRoutes);
+app.use("/api", authorRoutes);
+app.use("/api", carreraRoutes);
+
+app.get("/api/uploads", (req, res) => {
+  // Obtén la lista de archivos en tu carpeta getProjects;
+  const folderPath = "./src/uploads";
+  console.log("");
+  fs.readdir(folderPath, (err, files) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Error al leer la carpeta de archivos" });
+    } else {
+      res.json({ files });
+    }
+  });
+});
+
+app.post(
+  "/api/uploads",
+  multer({ storage }).single("uploadPDF"),
+  (req, res) => {
+    const selectedFiles = req.body;
+    //console.log(selectedFiles);
+    const folderPath = "./src/uploads";
+
+    // Inicializa Archiver para crear un archivo ZIP
+    const archive = archiver("zip", {
+      zlib: { level: 9 }, // Nivel de compresión
+    });
+
+    // Crea un flujo de lectura para el archivo ZIP
+    const output = fs.createWriteStream(
+      "./src/backups/copia-de-seguridad-proyectos.zip"
+    );
+
+    // Pipe Archiver al flujo de salida
+    const arreglo = Object.keys(selectedFiles);
+    // Agrega los archivos seleccionados al archivo ZIP
+    arreglo.forEach((file) => {
+      const value = selectedFiles[file];
+      const filePath = path.join(folderPath, value);
+      archive.file(filePath, { name: value });
+      console.log(filePath);
+    });
+
+    archive.pipe(output);
+    // Finaliza el archivo ZIP
+    archive.finalize();
+
+    // Envía el archivo ZIP como respuesta al cliente
+    output
+      .on("close", function () {
+        res.download(
+          "./src/backups/copia-de-seguridad-proyectos.zip",
+          "copia-de-seguridad-proyectos.zip",
+          (err) => {
+            if (err) {
+              console.error(err);
+              res.status(500).json({ error: "Error al descargar archivos" });
+            }
+          }
+        );
+      })
+      .on("error", function (err) {
+        console.error(err);
+      });
+    //const downloadUrl = '/archivo.zip';
+  }
+);
+
+app.get("/api/download/archivo.zip", (req, res) => {
+  const filePath = __dirname + "/backups/copia-de-seguridad-proyectos.zip"; // Ruta completa al archivo ZIP
+  console.log(filePath);
+  res.download(filePath, "copia-de-seguridad-proyectos.zip", (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Error al descargar archivos" });
+    }
+  });
+});
+
 //enviarMail();
+
+app.use(express.static("./uploads"));
+
+app.use("/uploads", express.static(path.resolve("./src/uploads")));
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
-  console.log(path.join(__dirname, "../client/build", "index.html"));
   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
