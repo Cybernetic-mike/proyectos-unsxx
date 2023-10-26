@@ -42,7 +42,6 @@ function FilePage() {
     //console.log("authors")
   }, []);
 
-
   const navigate = useNavigate();
   const onClick = (taskFile, taskId, taskVisits) => {
     setUrlFile(taskFile);
@@ -90,13 +89,15 @@ function FilePage() {
               key={task._id}
               sx={{
                 minWidth: 275,
-                m: "10px",
+                m: "3%",
                 background: "white",
                 boxShadow: "3px 3px 8px",
               }}
             >
               <CardContent>
-                <Typography sx={{ mb: 1.5, textAlign: "center", fontWeight: "bold"}}>
+                <Typography
+                  sx={{ mb: 1.5, textAlign: "center", fontWeight: "bold" }}
+                >
                   {task.title}
                 </Typography>
                 <Typography
@@ -162,30 +163,43 @@ function FilePage() {
                   {task.summary}
                 </Typography>
               </CardContent>
-              <CardActions sx={{ paddingTop: "0" }}>
-                <Button
-                  size="small"
-                  defaultValue={task.file}
-                  onClick={() => onClick(task.file, task._id, task.visits)}
-                  sx={{ paddingTop: "0" }}
-                >
-                  Ver contenido...
-                </Button>
-                <Box
-                  sx={{
-                    "& > legend": { mt: 2 },
-                    paddingLeft: "730px"
-                  }}
-                >
-                  <Typography component="legend">Popularidad {task.visits>value? setValue(task.visits):" "}</Typography>
-                  <Rating name="read-only" value={task.visits<(value/5)? 1:(task.visits<(value/5)*2? 2:task.visits<(value/5)*3? 3:task.visits<(value/5)*4? 4:5)} readOnly precision={0.5} />
+              <CardActions sx={{display: "inline"}}>
+                <Box sx={{display: "inline"}}>
+                  <Button
+                    size="small"
+                    defaultValue={task.file}
+                    onClick={() => onClick(task.file, task._id, task.visits)}
+                    
+                  >
+                    Ver contenido...
+                  </Button>
                 </Box>
-                
+                <Box sx={{textAlign: "right", paddingRight: "2%"}}>
+                  <Typography component="legend">
+                    Popularidad{" "}
+                    {task.visits > value ? setValue(task.visits) : " "}
+                  </Typography>
+                  <Rating
+                    name="read-only"
+                    value={
+                      task.visits < value / 5
+                        ? 1
+                        : task.visits < (value / 5) * 2
+                        ? 2
+                        : task.visits < (value / 5) * 3
+                        ? 3
+                        : task.visits < (value / 5) * 4
+                        ? 4
+                        : 5
+                    }
+                    readOnly
+                    precision={0.5}
+                  />
+                </Box>
               </CardActions>
             </Card>
           ))}
         </Box>
-
       </Container>
     </ThemeProvider>
   );

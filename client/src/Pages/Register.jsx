@@ -172,12 +172,15 @@ function Register() {
                 </FormControl>
               </Grid>
               <Grid item xs={12}>
-                <div>
-                  <Checkbox
+                <Box sx={{display: "inline"}}>
+                  <Checkbox sx={{display: "inline"}}
                     {...register("notification", { required: false })}
                     defaultChecked
                   />
-                </div>
+                </Box>
+                <Box sx={{display: "inline"}}>
+                  <Typography sx={{display: "inline"}}>Deseo recibir notificaciones</Typography>
+                </Box>
               </Grid>
             </Grid>
             <Button

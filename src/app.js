@@ -39,7 +39,8 @@ app.get("/", (req, res) => {
 
 app.use(
   cors({
-    origin: "https://proyectos-unsxx.site",
+    //origin: "https://proyectos-unsxx.site",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -65,7 +66,7 @@ app.use("/api", projectRoutes);
 app.use("/api", uploadRoutes);
 app.use("/api", authorRoutes);
 app.use("/api", carreraRoutes);
-//app.use(express.static('./uploads'));
+app.use(express.static('./uploads'));
 
 app.use("/uploads", express.static(path.resolve("./src/uploads")));
 

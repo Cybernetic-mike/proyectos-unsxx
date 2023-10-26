@@ -37,9 +37,7 @@ function Footer() {
             <Link href="/" variant="body1" display="block">
               <HomeIcon/>Inicio
             </Link>
-            <Link href="/acerca-de" variant="body1" display="block">
-              <InfoIcon/>Acerca de
-            </Link>
+
             <Link
               href="http://unsxx.edu.bo/"
               variant="body1"

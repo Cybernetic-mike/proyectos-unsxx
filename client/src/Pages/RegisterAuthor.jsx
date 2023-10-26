@@ -200,15 +200,6 @@ function RegisterAuthor() {
                   error={errors.email ? true : false}
                 />
               </Grid>
-
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
-                  }
-                  label="Acepto recibir notificaciones en mi correo."
-                />
-              </Grid>
             </Grid>
             <Button
               type="submit"

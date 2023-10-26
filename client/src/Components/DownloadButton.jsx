@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "../api/axios";
-import { Button } from 'reactstrap';
+import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";

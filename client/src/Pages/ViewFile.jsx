@@ -35,7 +35,7 @@ function ViewFile() {
   const [numPages, setNumPages] = useState(null);
 
   //const pdfUrl = `http://localhost:4000${urlFile}`;
-  const pdfUrl = process.env.REACT_APP_API_URL+`${urlFile}`;
+  const pdfUrl = `/uploads/${urlFile}`;
   console.log(pdfUrl);
   const [url, setUrl]=useState(pdfUrl);
 

@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Grid } from "@mui/material";
 
 const Licencia = ({ isOpen, onRequestClose }) => {
   return (
@@ -13,10 +14,12 @@ const Licencia = ({ isOpen, onRequestClose }) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 800,
+          width: "auto",
+          height: "500px",
           bgcolor: "background.paper",
           boxShadow: 24,
-          p: 4,
+          padding: "20px",
+          overflow: "auto"
         }}
       >
         <Typography id="modal-title" variant="h6" component="h2">
@@ -53,9 +56,11 @@ const Licencia = ({ isOpen, onRequestClose }) => {
           términos de esta licencia y te comprometes a cumplir con sus
           condiciones.
         </Typography>
-        <Button onClick={onRequestClose} sx={{ mt: 3 }}>
+        <Box sx={{display: "block"}}>
+        <Button onClick={onRequestClose} sx={{ mt: 3, position: "absolute" }}>
           Cerrar
         </Button>
+        </Box>
       </Box>
     </Modal>
   );
