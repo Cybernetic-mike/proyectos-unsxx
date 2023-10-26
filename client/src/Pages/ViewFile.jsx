@@ -84,7 +84,7 @@ function ViewFile() {
         color="secondary"
           sx={{ background: "#25D366" , color: "white" }}
           aria-label="WhatsApp"
-          href={`https://api.whatsapp.com/send?text=${url}`}
+          href={`https://api.whatsapp.com/send?text=https://proyectos-unsxx.site/viewfile?urlFile=${pdfUrl}`}
           target="blank"
         >
           <WhatsAppIcon fontSize="large" />
@@ -101,7 +101,7 @@ function ViewFile() {
         color="primary"
           sx={{ background: "#00acee" , color: "white" }}
           aria-label="Twitter"
-          href={`https://twitter.com/intent/tweet?text=Proyectos_UNSXX&url=${url}&via=Proyecto&hashtags=#unsxx`}
+          href={`https://twitter.com/intent/tweet?text=Proyectos_UNSXX&url=https://proyectos-unsxx.site/viewfile?urlFile=${pdfUrl}&via=Proyecto&hashtags=#unsxx`}
           target="blank"
         >
           <TwitterIcon fontSize="large" />
