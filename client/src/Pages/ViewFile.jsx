@@ -45,7 +45,7 @@ function ViewFile() {
   const shareOnFacebook = () => {
     window.FB.ui({
       method: 'share',
-      href: pdfUrl
+      href: "https://proyectos-unsxx.site/viewfile?urlFile="+pdfUrl
     }, function(response){});
   };
   return (
