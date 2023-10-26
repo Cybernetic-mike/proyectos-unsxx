@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.routes.js";
 import cookieParser from "cookie-parser";
-// import fileUpload from "express-fileupload";
+import fileUpload from "express-fileupload";
 import cors from "cors";
 import path from "path";
 import fs from "fs";
@@ -53,17 +53,17 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   fileUpload({
-//     useTempFiles: true,
-//     // tempFileDir: path.resolve("./src/uploads"),
-//     tempFileDir: "./src",
-//     // createParentPath: true,
-//     // limits: { fileSize: 10 * 1024 * 1024 },
-//     // abortOnLimit: true,
-//     // responseOnLimit: "archivo demasiado grande",
-//   })
-// );
+app.use(
+   fileUpload({
+     useTempFiles: true,
+     // tempFileDir: path.resolve("./src/uploads"),
+     tempFileDir: "./src",
+     // createParentPath: true,
+     // limits: { fileSize: 10 * 1024 * 1024 },
+     // abortOnLimit: true,
+     // responseOnLimit: "archivo demasiado grande",
+  })
+ );
 
 // app.use(express.urlencoded({ extended: true }));
 
