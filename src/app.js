@@ -89,7 +89,7 @@ app.get("/api/uploads", (req, res) => {
 
 app.post(
   "/api/uploads",
-  multer({ storage }).single("uploadPDF"),
+  multer({ storage }).array("uploadPDF"),
   (req, res) => {
     const selectedFiles = req.body;
     //console.log(selectedFiles);
