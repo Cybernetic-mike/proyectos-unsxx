@@ -57,8 +57,8 @@ function BackupFiles() {
       console.log(selectFiles[i]);
     }
 
-    //fetch("http://localhost:3000/uploads", {
-    fetch("/api/uploads", {
+    fetch("http://localhost:4000/uploads", {
+    //fetch("/api/uploads", {
       method: "POST",
       body: formData,
     })

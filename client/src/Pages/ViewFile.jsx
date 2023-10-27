@@ -52,7 +52,12 @@ function ViewFile() {
     <ThemeProvider theme={defaultTheme}>
       <Container component="main">
         <CssBaseline />
+        <Box>
+        <iframe src={url} width="100%" height="550"></iframe>
+        </Box>
+        {/*
         <Box
+         
           sx={{
             marginTop: 2,
             display: "flex",
@@ -79,7 +84,9 @@ function ViewFile() {
               </div>
             ))}
           </Document>
+          
         </Box>
+        */}
         <Fab
         color="secondary"
           sx={{ background: "#25D366" , color: "white" }}

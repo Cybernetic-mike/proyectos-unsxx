@@ -20,6 +20,7 @@
     "fb-react-sdk": "^1.0.4",
     "js-cookie": "^3.0.5",
     "notistack": "^3.0.1",
+    "pdfjs-dist": "^3.11.174",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-facebook": "^9.0.12",
