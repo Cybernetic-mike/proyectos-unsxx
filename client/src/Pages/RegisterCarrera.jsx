@@ -13,8 +13,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 
 import { useForm } from "react-hook-form";
-//import { useCarreras } from "../context/CarrerasContext";
+import { useCarreras } from "../context/CarrerasContext";
 
+//import { useNavigate } from "react-router-dom";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 //Validar campos
@@ -25,15 +26,13 @@ function RegisterCarrera() {
 
   //const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit
-  } = useForm();
-  //const { createAuthor, errors: registerErrors } = useCarreras();
+  const { register, handleSubmit} = useForm();
+
+  const {createCarrera} = useCarreras();
 
   const onSubmit = handleSubmit(async (values) => {
     console.log(values);
-    //createAuthor(values);
+    createCarrera(values);
   });
 
   /*Lista deplegable*/
@@ -41,14 +40,6 @@ function RegisterCarrera() {
     const newType = event.target.value;
     setSelectedArea(newType);
     console.log(newType);
-  };
-  
-  const [inputValue1, setInputValue1] = useState("");
-  const handleInputChange1 = (event) => {
-    const value = event.target.value;
-    const replacedValue = value.replace(/ /g, "-");
-    const minusculas = replacedValue.toLowerCase();
-    setInputValue1(minusculas);
   };
 
   return (
@@ -70,27 +61,30 @@ function RegisterCarrera() {
           <Typography component="h1" variant="h5">
             Registro de nueva Carrera
           </Typography>
-          <Box sx={{ color: "red" }}>
+          <Box sx={{color:"red"}}>
+            {/*registerErrors.map((error, i) => (
+              <div key={i}>{error}</div>
+            ))*/}
           </Box>
           <Box component="form" noValidate onSubmit={onSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <FormControl fullWidth>
-                  <InputLabel id="categori">Area</InputLabel>
+                  <InputLabel id="categoria">Area</InputLabel>
                   <Select
                     //id="area"
 
                     value={selectedArea}
                     label="Area"
                     //error={errors.area ? true : false}
-                    {...register("categori", { required: true })}
+                    {...register("categoria", { required: true })}
                     onChange={handleAreaChange}
                     required
                     //helperText={errors.area && "Nombre es requerido"}
                   >
-                    <MenuItem value="SALUD">SALUD</MenuItem>
-                    <MenuItem value="SOCIALES">SOCIALES</MenuItem>
-                    <MenuItem value="TECNOLOGIA">TECNOLOGIA</MenuItem>
+                    <MenuItem value="salud">SALUD</MenuItem>
+                    <MenuItem value="sociales">SOCIALES</MenuItem>
+                    <MenuItem value="tecnologia">TECNOLOGIA</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
@@ -98,16 +92,15 @@ function RegisterCarrera() {
                 <TextField
                   required
                   fullWidth
-                  id="carrera"
+                  id="name"
                   label="Carrera"
                   name="carrera"
-                  onKeyUp={handleInputChange1}
                   {...register("name", { required: true })}
+                  //helperText={errors.carrera && "Nombre es requerido"}
+                  //error={errors.carrera ? true : false}
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
-                
-              </Grid>
+              <Grid item xs={12} sm={6}></Grid>
             </Grid>
             <Button
               type="submit"

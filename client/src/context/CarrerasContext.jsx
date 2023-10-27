@@ -11,7 +11,7 @@ const CarreraContext = createContext();
 export const useCarreras = () => {
   const context = useContext(CarreraContext);
   if (!context) {
-    
+    console.log(context);
     throw new Error("Error no hay datos");
   }
   return context;
@@ -26,7 +26,7 @@ export const CarreraProvider=({ children })=> {
   const getCarreras = async () => {
     try {
       const res = await getCarrerasRequest();
-      console.log(res.data)
+      //console.log(res.data)
       setCarreras(res.data);
     } catch (error) {
       console.log("Hubo un errror");
@@ -35,13 +35,13 @@ export const CarreraProvider=({ children })=> {
   };
 
   const createCarrera = async (carrera) => {
-    //console.log("Registrado createAuthor");
     
     try {
       const res = await createCarrerasRequest(carrera);
       setCarreras(res.data);
-      console.log("Autor Registrado");
-      navigate("/proyects");
+      console.log(res.data);
+      console.log("Nueva Carrera Registrada");
+      navigate("/");
     } catch (error) {
       console.log(error.response);
       console.log("Error al registrar");

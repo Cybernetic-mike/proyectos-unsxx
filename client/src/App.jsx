@@ -26,6 +26,7 @@ import { AuthorProvider } from './context/AuthorsContext';
 
 import FilePage from './Pages/FilePage';
 import { useAuth } from './context/AuthContext';
+import { CarreraProvider } from './context/CarrerasContext';
 
 const navArrayLinks=[
   {
@@ -68,6 +69,7 @@ function App() {
       <Container sx={{mt: 7}}>
       <TaskProvider>
       <AuthorProvider>
+      <CarreraProvider>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
@@ -84,6 +86,7 @@ function App() {
             <Route path='/registercarrera' element={<RegisterCarrera/>}/>
           </Route>
         </Routes>
+        </CarreraProvider>
         </AuthorProvider>
         </TaskProvider>
       </Container>

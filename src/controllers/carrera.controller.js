@@ -4,7 +4,9 @@ export const createCarrera = async (req, res, next) => {
   const newCarrera = new Carrerar(req.body);
 
   if (!req.body.slug) {
-    newCarrera.slug = newCarrera.name.toLowerCase().replace(" ", "-");
+    newCarrera.slug = newCarrera.name.replace(/ /g, "-");
+    //newCarrera.slug = newCarrera.name.toLowerCase().replace(" ", "-");
+    console.log(newCarrera);
   }
 
   const carreraSaved = await newCarrera.save();

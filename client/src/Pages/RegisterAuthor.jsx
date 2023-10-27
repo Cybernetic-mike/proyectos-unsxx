@@ -143,8 +143,7 @@ function RegisterAuthor() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <FormControl fullWidth
-                >
+                <FormControl fullWidth>
                   <InputLabel id="area">Area</InputLabel>
                   <Select
                     //id="area"

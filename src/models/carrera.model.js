@@ -5,14 +5,17 @@ const carreraSchema = new mongoose.Schema(
     name: {
       type: String,
       default: Date.now,
+      required: true
     },
     categoria: {
       type: String,
+      required: true
     },
     slug: {
       type: String,
       unique: true,
       index: true,
+      required: true
     },
   },
   {
