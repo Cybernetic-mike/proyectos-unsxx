@@ -113,6 +113,7 @@ class Home extends Component {
           <Box
             sx={{
               marginTop: 2,
+              padding: 0,
               display: "flex",
               textAlign: "left",
               height: "90%",

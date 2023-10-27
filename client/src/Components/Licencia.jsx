@@ -12,10 +12,11 @@ const Licencia = ({ isOpen, onRequestClose }) => {
         sx={{
           position: "absolute",
           top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "auto",
-          height: "500px",
+          left: "40%",
+          transform: "translate(-40%, -40%)",
+          width: "90%",
+          height: "auto",
+          maxHeight: "80%",
           bgcolor: "background.paper",
           boxShadow: 24,
           padding: "20px",
@@ -57,7 +58,7 @@ const Licencia = ({ isOpen, onRequestClose }) => {
           condiciones.
         </Typography>
         <Box sx={{display: "block"}}>
-        <Button onClick={onRequestClose} sx={{ mt: 3, position: "absolute" }}>
+        <Button onClick={onRequestClose} sx={{ mt: 3, width: "100%" }}>
           Cerrar
         </Button>
         </Box>
