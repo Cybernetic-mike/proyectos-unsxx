@@ -54,11 +54,11 @@ function BackupFiles() {
 
     for (let i = 0; i < selectFiles.length; i++) {
       formData.append("uploadPDF", selectFiles[i]);
-      //console.log(selectFiles[i]);
+      console.log(selectFiles[i]);
     }
 
     //fetch("http://localhost:4000/uploads", {
-    fetch("/uploads", {
+    fetch("/api/uploads", {
       method: "POST",
       body: formData,
     })
@@ -68,7 +68,7 @@ function BackupFiles() {
         // No se requieren acciones adicionales en el frontend
       })
       .catch((error) => {
-        //console.error("Error al subir el archivo:", error);
+        console.error("Error al subir el archivo:", error);
       });
   };
 
