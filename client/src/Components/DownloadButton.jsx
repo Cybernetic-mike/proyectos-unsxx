@@ -8,12 +8,6 @@ import Container from "@mui/material/Container";
 const defaultTheme = createTheme();
 
 function DownloadButton() {
-  const [files, setFiles] = useState([]);
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   const handleDownload = () => {
     axios.get('/download/archivo.zip', { responseType: 'blob' })

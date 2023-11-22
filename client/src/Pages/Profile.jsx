@@ -10,7 +10,7 @@ function Profile() {
     const [profile, setProfile] = useState(null);
     useEffect(() => {
         getProfile();
-        console.log(user);
+        //console.log(user);
         //console.log(getProfile().user());
       }, []);
 

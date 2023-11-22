@@ -14,22 +14,16 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const defaultTheme = createTheme();
 export default function Login() {
   const {register, handleSubmit, formState:{errors}}=useForm();
   const {signin, errors: signinErrors, isAuthenticated}=useAuth();
-  const navigate=useNavigate();
 
   const onSubmit=handleSubmit((data)=>{
     signin(data)
   });
 
-  /*useEffect(()=>{
-    if(isAuthenticated) navigate("/")
-  },[isAuthenticated]);*/
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">

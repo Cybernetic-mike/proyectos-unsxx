@@ -46,6 +46,7 @@ const items = [
 
 const defaultTheme = createTheme();
 class Home extends Component {
+  //Animacion del carrusel de imagenes
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };

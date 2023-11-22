@@ -3,11 +3,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -48,14 +45,14 @@ function RegisterAuthor() {
   const handleAreaChange = (event) => {
     const newType = event.target.value;
     setSelectedArea(newType);
-    console.log(newType)
+    //console.log(newType)
 
     if (newType === "SALUD") {
       
       //setSelectedArea("salud");      
       setCareerOptions(["BIOQUIMICA", "ODONTOLOGIA", "ENFERMERIA", "MEDICINA", "LABORATORIO CLINICO"]);
       setCareers(careerSalud);  
-      console.log(newType)
+      //console.log(newType)
 
     } else if (newType === "SOCIALES") {
       
@@ -63,21 +60,21 @@ function RegisterAuthor() {
       
       setCareerOptions(["CIENCIAS DE LA EDUCACION", "CONTADURIA PUBLICA", "DERECHO", "COMUNICACION SOCIAL"]);
       setCareers(careerSociales);      
-      console.log(newType)
+      //console.log(newType)
     } else if (newType === "TECNOLOGIA") {
       
       //setSelectedArea("tecnologia");
       
       setCareerOptions(["CIVIL", "AGRONIMIA", "INFORMATICA", "MECANICA AUTOMOTRIZ", "MINAS TOPOLOGIA", "ELECTROMECANICA"]);
       setCareers(careerTecnologia); 
-      console.log(newType)
+      //console.log(newType)
     }
   };
 
   const handleCareerChange=(event)=>{
     const newType= event.target.value;
     setCareerOptions(newType);
-    console.log(careerOptions);
+    //console.log(careerOptions);
   }
   return (
     <ThemeProvider theme={defaultTheme}>

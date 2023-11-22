@@ -19,16 +19,16 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const signup = async (user) => {
-    console.log(user);
+    //console.log(user);
     try {
       const res = await registerRequest(user);
       
-      console.log(res.data);
+      //console.log(res.data);
       setUser(res.data);
       setIsAuthenticated(true);
       navigate("/");
     } catch (error) {
-      console.log(error.response);
+      //console.log(error.response);
       setErrors(error.response.data);
     }
   };
@@ -36,13 +36,13 @@ export const AuthProvider = ({ children }) => {
   const signin = async (user) => {
     try {
       const res = await loginRequest(user);
-      console.log("inicio de sesion");
-      console.log(res);
+      //console.log("inicio de sesion");
+      //console.log(res);
       setIsAuthenticated(true);
       setUser(res.data);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       if (Array.isArray(error.response.data)) {
         return setErrors(error.response.data);
       }
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }) => {
       if (cookies.token) {
         try {
           const res = await verityTokenRequest(cookies.token);
-          console.log(res);
+          //console.log(res);
           if (!res.data) return setIsAuthenticated(false);
 
           setIsAuthenticated(true);

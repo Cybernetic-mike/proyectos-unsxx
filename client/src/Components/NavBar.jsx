@@ -12,7 +12,6 @@ import {
   Paper,
   Popper,
   Slide,
-  TextField,
   Toolbar,
   Typography,
   alpha,
@@ -29,7 +28,6 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
 import SearchIcon from "@mui/icons-material/Search";
-import zIndex from "@mui/material/styles/zIndex";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -160,7 +158,7 @@ function NavBar({ navArrayLinks, navArrayLinksAdmin, props }) {
   const {getProfile, user}=useAuth();
     useEffect(() => {
         //getProfile();
-        console.log(user);
+        //console.log(user);
         //console.log(getProfile().user());
       }, []);
 

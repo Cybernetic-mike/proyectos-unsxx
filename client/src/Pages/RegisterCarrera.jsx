@@ -31,7 +31,7 @@ function RegisterCarrera() {
   const {createCarrera} = useCarreras();
 
   const onSubmit = handleSubmit(async (values) => {
-    console.log(values);
+    //console.log(values);
     createCarrera(values);
   });
 
@@ -39,7 +39,7 @@ function RegisterCarrera() {
   const handleAreaChange = (event) => {
     const newType = event.target.value;
     setSelectedArea(newType);
-    console.log(newType);
+    //console.log(newType);
   };
 
   return (

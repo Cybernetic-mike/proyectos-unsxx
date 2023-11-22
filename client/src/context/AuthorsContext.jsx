@@ -11,7 +11,7 @@ const AuthorContext = createContext();
 export const useAuthors = () => {
   const context = useContext(AuthorContext);
   if (!context) {
-    console.log(context);
+    //console.log(context);
     throw new Error("No existe el Autor");
   }
   return context;
@@ -26,11 +26,11 @@ export const AuthorProvider=({ children })=> {
   const getAuthors = async () => {
     try {
       const res = await getAuthorsRequest();
-      console.log(res.data)
+      //console.log(res.data)
       setAuthors(res.data);
     } catch (error) {
-      console.log("Hubo un errror");
-      console.error(error);
+      //console.log("Hubo un errror");
+      //console.error(error);
     }
   };
 
@@ -40,11 +40,11 @@ export const AuthorProvider=({ children })=> {
     try {
       const res = await createAuthorRequest(author);
       setAuthors(res.data);
-      console.log("Autor Registrado");
+      //console.log("Autor Registrado");
       navigate("/proyects");
     } catch (error) {
-      console.log(error.response);
-      console.log("Error al registrar");
+      //console.log(error.response);
+      //console.log("Error al registrar");
       setErrors(error.response.data);
     }
   };

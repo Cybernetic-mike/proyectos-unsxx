@@ -11,7 +11,7 @@ const CarreraContext = createContext();
 export const useCarreras = () => {
   const context = useContext(CarreraContext);
   if (!context) {
-    console.log(context);
+    //console.log(context);
     throw new Error("Error no hay datos");
   }
   return context;
@@ -29,7 +29,7 @@ export const CarreraProvider=({ children })=> {
       //console.log(res.data)
       setCarreras(res.data);
     } catch (error) {
-      console.log("Hubo un errror");
+      //console.log("Hubo un errror");
       console.error(error);
     }
   };
@@ -39,8 +39,8 @@ export const CarreraProvider=({ children })=> {
     try {
       const res = await createCarrerasRequest(carrera);
       setCarreras(res.data);
-      console.log(res.data);
-      console.log("Nueva Carrera Registrada");
+      //console.log(res.data);
+      //console.log("Nueva Carrera Registrada");
       navigate("/");
     } catch (error) {
       console.log(error.response);

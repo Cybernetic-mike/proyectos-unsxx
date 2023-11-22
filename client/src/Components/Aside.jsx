@@ -5,12 +5,10 @@ import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-//import Typography from "@mui/material/Typography";
-//import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Button } from "@mui/material";
 import { getCarrerasRequest } from "../api/carreras";
 import { useNavigate } from "react-router-dom";
-
+//acciones del aside
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -58,7 +56,7 @@ function Aside() {
     }
     return acc;
   }, []);
-  console.log(categorias);
+  //console.log(categorias);
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);

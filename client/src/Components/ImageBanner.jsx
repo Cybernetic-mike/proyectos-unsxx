@@ -1,9 +1,7 @@
 // src/components/ImageBanner.js
 import React, { useState, useEffect } from 'react';
 import './ImageBanner.css';
-import { Box } from '@mui/material';
 import banner from '../images/bannerunsxx.jpg';
-import Fondo3 from '../images/fondo3.jpg';
 
 const ImageBanner = ({ images, interval }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -22,8 +20,6 @@ const ImageBanner = ({ images, interval }) => {
     <div className="banner">
   <img src={banner} alt="Banner" />
   <div className="banner-content">
-      <h1>aGuideHub</h1>
-      <p>Welcome To aGuideHub! </p>
   </div>
 </div>
   );

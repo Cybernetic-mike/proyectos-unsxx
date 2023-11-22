@@ -34,11 +34,11 @@ function BackupFiles() {
     axios
       .post("/uploads", files)
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         // setFiles(response.data);
       })
       .catch((error) => {
-        console.error("Error al iniciar la descarga:", error);
+        //console.error("Error al iniciar la descarga:", error);
       });
     // Redirige al usuario a la ruta de descarga en el servidor
   };
@@ -46,7 +46,7 @@ function BackupFiles() {
   const handleFileChange = (event) => {
     const temp = event.target.files;
     setSelectFiles([...archivos, ...temp]); // Agregar nuevos archivos a la lista existente
-    console.log(selectFiles);
+    //console.log(selectFiles);
   };
 
   const handleUpload = () => {
@@ -54,21 +54,21 @@ function BackupFiles() {
 
     for (let i = 0; i < selectFiles.length; i++) {
       formData.append("uploadPDF", selectFiles[i]);
-      console.log(selectFiles[i]);
+      //console.log(selectFiles[i]);
     }
 
-    fetch("http://localhost:4000/uploads", {
-    //fetch("/api/uploads", {
+    //fetch("http://localhost:4000/uploads", {
+    fetch("/api/uploads", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.blob())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         // No se requieren acciones adicionales en el frontend
       })
       .catch((error) => {
-        console.error("Error al subir el archivo:", error);
+        //console.error("Error al subir el archivo:", error);
       });
   };
 

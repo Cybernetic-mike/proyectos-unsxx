@@ -4,19 +4,16 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import { Button, Modal } from "@mui/material";
 
-// Importa los iconos de las redes sociales que quieras usar
+// Importa los iconos de las redes sociales
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WebIcon from "@mui/icons-material/Web";
 import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
 
 import { useState } from "react";
 import LicenseModal from "./Licencia";
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {

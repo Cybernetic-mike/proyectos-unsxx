@@ -1,18 +1,11 @@
 import {
   Box,
-  Button,
-  ClickAwayListener,
   Divider,
-  Grow,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  MenuItem,
-  MenuList,
-  Paper,
-  Popper,
   Typography,
 } from "@mui/material";
 import { useAuth } from "../context/AuthContext";

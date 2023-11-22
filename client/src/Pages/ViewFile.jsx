@@ -55,38 +55,7 @@ function ViewFile() {
         <Box>
         <iframe src={url} width="100%" height="550"></iframe>
         </Box>
-        {/*
-        <Box
-         
-          sx={{
-            marginTop: 2,
-            display: "flex",
-            textAlign: "left",
-            height: "570px",
-            width: "80%",
-            paddingRight: "0",
-            overflow: "auto",
-            position: "relative",
-          }}
-        >
-          <Document
-            file={pdfUrl}
-            onLoadSuccess={onDocumentLoadSuccess}
-            style={{ width: "100%", height: "100%" }}
-          >
-            {Array.from(new Array(numPages), (el, index) => (
-              <div style={{ border: "3px solid black", borderRadius: "4px" }}>
-                <Page
-                  key={`page_${index + 1}`}
-                  pageNumber={index + 1}
-                  width={window.innerWidth * 0.4}
-                />
-              </div>
-            ))}
-          </Document>
-          
-        </Box>
-        */}
+
         <Fab
         color="secondary"
           sx={{ background: "#25D366" , color: "white" }}

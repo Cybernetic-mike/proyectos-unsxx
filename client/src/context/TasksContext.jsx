@@ -38,7 +38,7 @@ export function TaskProvider({ children }) {
       console.log(res);
       navigate("/");
     } catch (error) {
-      console.log(error.response);
+      //console.log(error.response);
       setErrors(error.response.data);
     }
     
