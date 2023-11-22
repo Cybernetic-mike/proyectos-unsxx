@@ -51,7 +51,7 @@ function Reports() {
 
   const handleReport = async () => {
     const link = document.createElement("a");
-    link.href = `${process.env.REACT_APP_API_URL}/api/reporte`;
+    link.href = `/api/reporte`;
     document.body.appendChild(link);
     link.click();
     link.remove();
