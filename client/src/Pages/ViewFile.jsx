@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import { useLocation } from "react-router-dom";
-import FacebookShareButton from "../Components/FacebookShareButton";
+
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';

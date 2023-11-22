@@ -20,7 +20,7 @@ const enviarMail = async (email) => {
     text: "Se acaba de añadir un nuevo proyecto de investigacion, puede interesarte", // plain text body
     html: "<h1>¡Se añadio un nuevo Proyecto!</h1>"+
           "<p>Puede ser intersante, ¡ve a verlo!</p>"+
-          "<br/><p><a href='http://localhost:3000/filepage'>Clic para ir a verlo ahora!!</a></p>", // html body
+          "<br/><p><a href='https://proyectos-unsxx.site/filepage'>Clic para ir a verlo ahora!!</a></p>", // html body
   };
 
   const transport = nodemailer.createTransport(config);

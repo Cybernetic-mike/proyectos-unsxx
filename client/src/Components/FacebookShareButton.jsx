@@ -23,7 +23,7 @@ class FacebookShareButton extends Component {
 
   render() {
     return (
-      <div className="fb-share-button" data-href="http://localhost:3000/viewfile?urlFile=/uploads/2ef9df7ebd02c44b6f9da66c88e76f58.pdf" data-layout="button_count"></div>
+      <div className="fb-share-button" data-href="https://proyectos-unsxx.site/viewfile?urlFile=/uploads/2ef9df7ebd02c44b6f9da66c88e76f58.pdf" data-layout="button_count"></div>
     );
   }
 }
