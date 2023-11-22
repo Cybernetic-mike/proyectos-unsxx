@@ -288,6 +288,14 @@ function NavBar({ navArrayLinks, navArrayLinksAdmin, props }) {
                                   Nueva Carrera
                                 </MenuItem>
                                 <MenuItem
+                                  key="Carrera"
+                                  component={NavLink}
+                                  to="/reports"
+                                  onClick={handleClose}
+                                >
+                                  Reportes
+                                </MenuItem>
+                                <MenuItem
                                   key="Salir"
                                   component={NavLink}
                                   to="/"

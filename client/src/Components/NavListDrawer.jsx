@@ -171,6 +171,15 @@ function NavListDrawer({ NavLinks, setOpen }) {
                   <ListItemText>Nuevo Administrador</ListItemText>
                 </ListItemButton>
               </ListItem>
+              <ListItem disablePadding key="Nuevo Proyecto">
+                <ListItemButton
+                  component={NavLinks}
+                  to="/reports"
+                  onClick={() => setOpen(false)}
+                >
+                  <ListItemText>Reportes</ListItemText>
+                </ListItemButton>
+              </ListItem>
               <ListItem disablePadding key="Proyectos">
                 <ListItemButton
                   key="Salir"

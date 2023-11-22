@@ -33,9 +33,9 @@ function FilePage() {
   useEffect(() => {
     getTasks({
       search: searchParams.get("search"),
-      carrera: searchParams.get("carrera"),
+
     });
-  }, [searchParams.get("carrera"), searchParams.get("search")]);
+  }, [ searchParams.get("search")]);
 
   useEffect(() => {
     getAuthors();
@@ -45,6 +45,7 @@ function FilePage() {
   const navigate = useNavigate();
   const onClick = (taskFile, taskId, taskVisits) => {
     setUrlFile(taskFile);
+    console.log(urlFile);
     //if(params.id){
     const visitas = {
       visits: taskVisits + 1,

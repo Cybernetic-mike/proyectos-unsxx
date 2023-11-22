@@ -8,6 +8,7 @@ import ViewFile from './Pages/ViewFile';
 import Profile from './Pages/Profile'
 import BackupFiles from './Pages/BackupFiles';
 import RegisterCarrera from './Pages/RegisterCarrera';
+import Reports from './Pages/Reports';
 import { Route, Routes } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import InboxIcon from '@mui/icons-material/Inbox';
@@ -15,6 +16,7 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import BackupIcon from '@mui/icons-material/Backup';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 import { Box, Container } from '@mui/material';
 import Aside from './Components/Aside';
 import Footer from './Components/Footer';
@@ -58,6 +60,9 @@ const navArrayLinks=[
   },
   {
     title: "Nueva Carrera", path:"/registercarrera", icon: <PlaylistAddIcon color='success'/>
+  },
+  {
+    title: "Reportes", path:"/reports", icon: <AssessmentIcon color='success'/>
   }
 ]
 function App() {
@@ -84,6 +89,7 @@ function App() {
             <Route path='/profile' element={<Profile/>}/>
             <Route path='/backupfiles' element={<BackupFiles/>}/>
             <Route path='/registercarrera' element={<RegisterCarrera/>}/>
+            <Route path='/reports' element={<Reports/>}/>
           </Route>
         </Routes>
         </CarreraProvider>

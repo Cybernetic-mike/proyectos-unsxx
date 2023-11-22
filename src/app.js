@@ -14,6 +14,7 @@ import projectRoutes from "./routes/projects.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
 import authorRoutes from "./routes/author.routes.js";
 import carreraRoutes from "./routes/carrera.routes.js";
+import reportesRoutes from "./routes/reportes.routes.js";
 
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -72,6 +73,7 @@ app.use("/api", projectRoutes);
 app.use("/api", uploadRoutes);
 app.use("/api", authorRoutes);
 app.use("/api", carreraRoutes);
+app.use("/api", reportesRoutes);
 
 app.get("/api/uploads", (req, res) => {
   // Obtén la lista de archivos en tu carpeta getProjects;
