@@ -33,9 +33,10 @@ function FilePage() {
   useEffect(() => {
     getTasks({
       search: searchParams.get("search"),
-
+      carrera: searchParams.get("carrera"),
+      registration: searchParams.get("registration"),
     });
-  }, [ searchParams.get("search")]);
+  }, [searchParams.get("carrera"), searchParams.get("search")]);
 
   useEffect(() => {
     getAuthors();

@@ -51,7 +51,7 @@ function Reports() {
 
   const handleReport = async () => {
     const link = document.createElement("a");
-    link.href = `/api/reporte`;
+    link.href = `/api/reporte`; // http://localhost:4000/api/reporte
     document.body.appendChild(link);
     link.click();
     link.remove();
