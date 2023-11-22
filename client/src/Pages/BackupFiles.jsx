@@ -58,7 +58,7 @@ function BackupFiles() {
     }
 
     //fetch("http://localhost:4000/uploads", {
-    fetch("/api/uploads", {
+    fetch("/uploads", {
       method: "POST",
       body: formData,
     })
